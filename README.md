@@ -55,6 +55,8 @@ To make changes persistent, adjust the `/jffs/scripts/wlboost` file.
 
 Restart the wireless service using `service restart_wireless` or by using the ScMerlin interface.
 
+This method is preferred, since the router UI may overrule values incorrectly.
+
 ## Troubleshooting
 
 It's possible to restore factory nvram settings by using a hard reset:
