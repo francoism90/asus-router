@@ -7,70 +7,40 @@
 # Introduction
 
 This repo provides nvram adjusts that may enable additional channels and TX-power (in most cases don't) on ASUS Merlin provided routers.
+
 The purpose is to expose all possible features first, and adjust them to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use it in GER).
 
-It seems most nvram settings are the same for ASUS routers, but to be sure please dump + save your current nvram first!<br>
+It seems most nvram settings are the same for ASUS routers, and are being synced when using AiMesh.
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8 (AiMesh node).
 
-A massive shoutout to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
+To be sure the nvram doesn't (soft-)brick your router/APs, please `nvram dump` first, and save the current nvram dump somewhere safe!
+
+A massive shoutout goes out to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
 
 ## Getting started
 
-See https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/ for instructions:
+> See https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/ for instructions.
 
-1. Login into router using SSH (password or key)
-2. Run `nvram dump > dump.txt`
-3. Use `scp` to copy it locally or copy the `nvram dump` directly
-4. Make sure `Enable JFFS custom scripts and configs` is enabled in System settings (https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts).
-5. Reboot router
+Login into router using SSH (password or key):
+
+1. Run `nvram dump > dump.txt`
+2. Use `scp` to copy it locally or copy the `nvram dump` directly
+3. Make sure `Enable JFFS custom scripts and configs` is enabled in System settings
+4. Reboot router
 
 ### User-scripts
 
-1. Create a `/jffs/scripts/wlboost` file (see [given examples](https://github.com/francoism90/asus-router/tree/main/jffs/scripts)), and paste your `nvram` overwrites into the `wlboost` file.
+> See https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts for details.
 
-2. Create/adjust `/jffs/scripts/init-start`:
+1. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details, and paste your `nvram` overwrites into the `/jffs/scripts/wlboost` file.
 
-```sh
-#!/bin/sh
-
-[ -x /jffs/scripts/wlboost ] && /jffs/scripts/wlboost & # should be before any addons!
-# [ -x /jffs/addons/AdGuardHome.d/AdGuardHome.sh ] && /jffs/addons/AdGuardHome.d/AdGuardHome.sh init-start &
-```
-
-3. Create/adjust `/jffs/scripts/services-start`:
-
-```sh
-#!/bin/sh
-
-/jffs/scripts/wlboost >/dev/null 2>&1 & # wlboost
-# /jffs/scripts/scmerlin startup & # scMerlin
-```
-
-4. Create/adjust `/jffs/scripts/service-event`:
-
-```sh
-#!/bin/sh
-
-if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost service_event "$@" & }; fi # wlboost
-```
-
-5. Create/adjust `/jffs/scripts/service-event-end`:
-
-```sh
-#!/bin/sh
-
-if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost service_event "$@" & }; fi # wlboost
-```
-
-6. Make sure scripts are executable:
+2. Make sure scripts are executable:
 
 ```bash
 chmod a+rx /jffs/scripts/*
 ```
 
-### Applying changes
-
-You need to reboot the router to apply changes:
+3. You need to reboot the router to apply changes:
 
 ```sh
 /jffs/scripts/wlboost
@@ -79,6 +49,14 @@ reboot
 
 ## Testing
 
-To make changes persistent, adjust the `jffs/scripts/wlboost` file.
+To make changes persistent, adjust the `/jffs/scripts/wlboost` file.
 
 Restart the wireless service using `service restart_wireless` or by using the ScMerlin interface.
+
+## Troubleshooting
+
+It's possible to restore factory nvram settings by using a hard reset:
+- https://www.asus.com/support/faq/1039077/
+- https://www.asus.com/support/faq/1039078/
+
+This will clear all overwrites and restores factory defaults.
