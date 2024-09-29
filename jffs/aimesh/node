@@ -6,6 +6,7 @@
 # To access an AiMesh node interface
 
 nvram set re_mode=0
+nvram set re_mode=1 # revert afterwards
 
 # To expose the full interface on an AiMesh node
 
