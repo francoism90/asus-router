@@ -8,7 +8,7 @@
 
 This repo provides nvram adjusts that may enable additional channels and TX-power (in most cases don't) on ASUS Merlin provided routers.
 
-The purpose is to adjust them to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use it in GER).
+The purpose is to adjust them to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
 
 It seems most nvram settings are the same for ASUS routers, and are being synced when using AiMesh.
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8 (AiMesh node).
