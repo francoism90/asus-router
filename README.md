@@ -10,7 +10,7 @@ This repo provides nvram adjusts that may enable additional channels and TX-powe
 The purpose is to expose all possible features first, and adjust them to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use it in GER).
 
 It seems most nvram settings are the same for ASUS routers, but to be sure please dump + save your current nvram first!<br>
-The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8.
+The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8 (AiMesh node).
 
 A massive shoutout to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
 
@@ -26,7 +26,7 @@ See https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/ for ins
 
 ### User-scripts
 
-1. Create a `/jffs/scripts/wlboost` file (see [example](blob/main/jffs/scripts/wlboost), and paste your `nvram` overwrites into this file.
+1. Create a `/jffs/scripts/wlboost` file (see [example](https://github.com/francoism90/asus-router/blob/main/jffs/scripts/wlboost)), and paste your `nvram` overwrites into this file.
 
 2. Create/adjust `/jffs/scripts/init-start`:
 
@@ -77,4 +77,4 @@ You need to reboot the router to apply changes:
 reboot
 ``` 
 
-To make the changes persistent, make sure to adjust the `jffs/scripts/wlboost` script.
+To make the changes persistent, make sure to also adjust the `jffs/scripts/wlboost` script.
