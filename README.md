@@ -1,17 +1,16 @@
 # Disclaimer
 
 > Following instructions are provided without any warranty, and may even get you in trouble legally.<br>
-> The instructions are provided for testing, learning, and should be use with care.<br>
+> The instructions are provided for testing, learning, preventing e-waste, and should be use with care.<br>
 > We (including contributers + commentators) are not responsible for any damage to your device(s) or any legal issues.
 
 # Introduction
 
 This repo provides nvram adjusts that may enable additional channels and TX-power (in most cases don't) on ASUS Merlin provided routers.
-The adjusted nvram settings have been tested on a ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8.
-
 The purpose is to expose all possible features first, and adjust them to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use it in GER).
 
 It seems most nvram settings are the same for ASUS routers, but to be sure please dump + save your current nvram first!
+The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8.
 
 A massive shoutout to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
 
@@ -34,36 +33,36 @@ See https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/ for ins
 ```sh
 #!/bin/sh
 
-[ -x /jffs/scripts/wlboost ] && /jffs/scripts/wlboost &
-# [ -x /jffs/addons/AdGuardHome.d/AdGuardHome.sh ] && /jffs/addons/AdGuardHome.d/AdGuardHome.sh init-start & # place wlboost before addons!
+[ -x /jffs/scripts/wlboost ] && /jffs/scripts/wlboost & # should be before any addons!
+# [ -x /jffs/addons/AdGuardHome.d/AdGuardHome.sh ] && /jffs/addons/AdGuardHome.d/AdGuardHome.sh init-start &
 ```
 
-Create/adjust `/jffs/scripts/services-start`:
+3. Create/adjust `/jffs/scripts/services-start`:
 
 ```sh
 #!/bin/sh
 
-/jffs/scripts/wlboost >/dev/null 2>&1 & # wl
+/jffs/scripts/wlboost >/dev/null 2>&1 & # wlboost
 # /jffs/scripts/scmerlin startup & # scMerlin
 ```
 
-Create/adjust `/jffs/scripts/service-event`:
+4. Create/adjust `/jffs/scripts/service-event`:
 
 ```sh
 #!/bin/sh
 
-if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost service_event "$@" & }; fi # wl
+if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost service_event "$@" & }; fi # wlboost
 ```
 
-Create/adjust `/jffs/scripts/service-event-end`:
+5. Create/adjust `/jffs/scripts/service-event-end`:
 
 ```sh
 #!/bin/sh
 
-if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost service_event "$@" & }; fi # wl
+if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost service_event "$@" & }; fi # wlboost
 ```
 
-Make sure the scripts are executable:
+6. Make sure scripts are executable:
 
 ```bash
 chmod a+rx /jffs/scripts/*
