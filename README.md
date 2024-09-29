@@ -9,7 +9,7 @@
 This repo provides nvram adjusts that may enable additional channels and TX-power (in most cases don't) on ASUS Merlin provided routers.
 The purpose is to expose all possible features first, and adjust them to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use it in GER).
 
-It seems most nvram settings are the same for ASUS routers, but to be sure please dump + save your current nvram first!
+It seems most nvram settings are the same for ASUS routers, but to be sure please dump + save your current nvram first!<br>
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8.
 
 A massive shoutout to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
