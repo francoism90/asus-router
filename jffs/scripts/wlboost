@@ -70,7 +70,7 @@ nvram set wl2_country_code=#a
 nvram set wl2_country_rev=0
 nvram set wl2_reg_mode=h
 
-# The following examples can be used to overrule channel settings.
+# The following examples can be used to overrule channel settings (including AIMesh nodes).
 # This approach is recommended over the GUI.
 # Uncomment the lines below to enable the settings.
 
@@ -82,7 +82,7 @@ nvram set wl2_reg_mode=h
 # nvram set wl1_sel_channel=48
 # nvram set wl1_chanspec=48/160
 
-# force 5GHz-2 channel (AIMesh node)
+# force 5GHz-2 channel (if provided by hw)
 # nvram set wl2_sel_channel=48
 # nvram set wl2_chanspec=48/160
 
