@@ -1,10 +1,15 @@
 #!/bin/sh
 
 # Base adjustments
+# This are the basic settings to enable JFFS.
+
 nvram set jffs2_on=1
 nvram set jffs2_scripts=1
 
 # Channel adjustments
+# This tries to enable all channels for the router, including DFS channels.
+# Please make sure to keep in a safe range for your country.
+
 nvram set 0:ccode=#a
 nvram set 0:regrev=0
 nvram set 1:ccode=#a
@@ -14,7 +19,7 @@ nvram set 2:regrev=0
 nvram set acs_ch13=1
 nvram set acs_dfs=1
 nvram set acs_unii4=1
-nvram set cfg_ui_region_disable=1
+nvram set cfg_ui_region_disable=0
 nvram set location_code=#a
 nvram set territory_code=US/02
 nvram set wl_acs_bgdfs_enab=0
@@ -46,6 +51,7 @@ nvram set wl1_acs_excl_chans_base=
 nvram set wl1_acs_excl_chans_cfg=
 nvram set wl1_acs_excl_chans_valid=
 nvram set wl1_acs_excl_chans=
+nvram set wl1_chansps="36 40 44 48 52 56 60 64 36l 40u 44l 48u 52l 56u 60l 64u 36/80 40/80 44/80 48/80 52/80 56/80 60/80 64/80 36/160 40/160 44/160 48/160 52/160 56/160 60/160 64/160 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177 100l 104u 108l 112u 116l 120u 124l 128u 132l 136u 140l 144u 149l 153u 157l 161u 165l 169u 173l 177u 100/80 104/80 108/80 112/80 116/80 120/80 124/80 128/80 132/80 136/80 140/80 144/80 149/80 153/80 157/80 161/80 165/80 169/80 173/80 177/80 100/160 104/160 108/160 112/160 116/160 120/160 124/160 128/160 149/160 153/160 157/160 161/160 165/160 169/160 173/160 177/160"
 nvram set wl1_chlist="36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177"
 nvram set wl1_country_code=#a
 nvram set wl1_country_rev=0
@@ -58,70 +64,88 @@ nvram set wl2_acs_excl_chans_base=
 nvram set wl2_acs_excl_chans_cfg=
 nvram set wl2_acs_excl_chans_valid=
 nvram set wl2_acs_excl_chans=
+nvram set wl2_chansps="36 40 44 48 52 56 60 64 36l 40u 44l 48u 52l 56u 60l 64u 36/80 40/80 44/80 48/80 52/80 56/80 60/80 64/80 36/160 40/160 44/160 48/160 52/160 56/160 60/160 64/160 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177 100l 104u 108l 112u 116l 120u 124l 128u 132l 136u 140l 144u 149l 153u 157l 161u 165l 169u 173l 177u 100/80 104/80 108/80 112/80 116/80 120/80 124/80 128/80 132/80 136/80 140/80 144/80 149/80 153/80 157/80 161/80 165/80 169/80 173/80 177/80 100/160 104/160 108/160 112/160 116/160 120/160 124/160 128/160 149/160 153/160 157/160 161/160 165/160 169/160 173/160 177/160"
 nvram set wl2_chlist="36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177"
 nvram set wl2_country_code=#a
 nvram set wl2_country_rev=0
 nvram set wl2_reg_mode=h
 
-# TX Power adjustments (risky!)
-nvram set 0:maxp2ga0=120
-nvram set 0:maxp2ga1=120
-nvram set 1:maxp5gb0a0=120
-nvram set 1:maxp5gb0a1=120
-nvram set 1:maxp5gb0a2=120
-nvram set 1:maxp5gb0a3=120
-nvram set 1:maxp5gb1a0=120
-nvram set 1:maxp5gb1a1=120
-nvram set 1:maxp5gb1a2=120
-nvram set 1:maxp5gb1a3=120
-nvram set 1:maxp5gb2a0=120
-nvram set 1:maxp5gb2a1=120
-nvram set 1:maxp5gb2a2=120
-nvram set 1:maxp5gb2a3=120
-nvram set 1:maxp5gb3a0=120
-nvram set 1:maxp5gb3a1=120
-nvram set 1:maxp5gb3a2=120
-nvram set 1:maxp5gb3a3=120
-nvram set 1:maxp5gb4a0=120
-nvram set 1:maxp5gb4a1=120
-nvram set 1:maxp5gb4a2=120
-nvram set 1:maxp5gb4a3=120
-nvram set 2:maxp5gb0a0=120
-nvram set 2:maxp5gb0a1=120
-nvram set 2:maxp5gb0a2=120
-nvram set 2:maxp5gb0a3=120
-nvram set 2:maxp5gb1a0=120
-nvram set 2:maxp5gb1a1=120
-nvram set 2:maxp5gb1a2=120
-nvram set 2:maxp5gb1a3=120
-nvram set 2:maxp5gb2a0=120
-nvram set 2:maxp5gb2a1=120
-nvram set 2:maxp5gb2a2=120
-nvram set 2:maxp5gb2a3=120
-nvram set 2:maxp5gb3a0=120
-nvram set 2:maxp5gb3a1=120
-nvram set 2:maxp5gb3a2=120
-nvram set 2:maxp5gb3a3=120
-nvram set 2:maxp5gb4a0=120
-nvram set 2:maxp5gb4a1=120
-nvram set 2:maxp5gb4a2=120
-nvram set 2:maxp5gb4a3=120
-nvram set wl_txpower=500
-nvram set wl0_txpower=500
-nvram set wl1_txpower=500
-nvram set wl2_txpower=500
+# The following examples can be used to overrule channel settings.
+# This approach is recommended over the GUI.
+# Uncomment the lines below to enable the settings.
 
-# force 2.4GHz channels
+# force 2.4GHz channel
 # nvram set wl0_sel_channel=6
 # nvram set wl0_chanspec=6l
 
-# force 5GHz channels
+# force 5GHz channel
 # nvram set wl1_sel_channel=48
 # nvram set wl1_chanspec=48/160
 
-# force 5-2GHz channels (AIMesh node)
+# force 5GHz-2 channel (AIMesh node)
 # nvram set wl2_sel_channel=48
 # nvram set wl2_chanspec=48/160
 
+# TX Power adjustments
+# Please note it may cause interference to other devices, and heat up the router.
+# Uncomment lines below to enable TX power increases.
+
+# nvram set 0:maxp2ga0=120
+# nvram set 0:maxp2ga1=120
+# nvram set 1:maxp5gb0a0=120
+# nvram set 1:maxp5gb0a1=120
+# nvram set 1:maxp5gb0a2=120
+# nvram set 1:maxp5gb0a3=120
+# nvram set 1:maxp5gb1a0=120
+# nvram set 1:maxp5gb1a1=120
+# nvram set 1:maxp5gb1a2=120
+# nvram set 1:maxp5gb1a3=120
+# nvram set 1:maxp5gb2a0=120
+# nvram set 1:maxp5gb2a1=120
+# nvram set 1:maxp5gb2a2=120
+# nvram set 1:maxp5gb2a3=120
+# nvram set 1:maxp5gb3a0=120
+# nvram set 1:maxp5gb3a1=120
+# nvram set 1:maxp5gb3a2=120
+# nvram set 1:maxp5gb3a3=120
+# nvram set 1:maxp5gb4a0=120
+# nvram set 1:maxp5gb4a1=120
+# nvram set 1:maxp5gb4a2=120
+# nvram set 1:maxp5gb4a3=120
+# nvram set 2:maxp5gb0a0=120
+# nvram set 2:maxp5gb0a1=120
+# nvram set 2:maxp5gb0a2=120
+# nvram set 2:maxp5gb0a3=120
+# nvram set 2:maxp5gb1a0=120
+# nvram set 2:maxp5gb1a1=120
+# nvram set 2:maxp5gb1a2=120
+# nvram set 2:maxp5gb1a3=120
+# nvram set 2:maxp5gb2a0=120
+# nvram set 2:maxp5gb2a1=120
+# nvram set 2:maxp5gb2a2=120
+# nvram set 2:maxp5gb2a3=120
+# nvram set 2:maxp5gb3a0=120
+# nvram set 2:maxp5gb3a1=120
+# nvram set 2:maxp5gb3a2=120
+# nvram set 2:maxp5gb3a3=120
+# nvram set 2:maxp5gb4a0=120
+# nvram set 2:maxp5gb4a1=120
+# nvram set 2:maxp5gb4a2=120
+# nvram set 2:maxp5gb4a3=120
+# nvram set 2:maxp5gb5a0=120
+# nvram set 2:maxp5gb5a1=120
+# nvram set 2:maxp5gb5a2=120
+# nvram set 2:maxp5gb5a3=120
+# nvram set 2:maxp5gb6a0=120
+# nvram set 2:maxp5gb6a1=120
+# nvram set 2:maxp5gb6a2=120
+# nvram set 2:maxp5gb6a3=120
+# nvram set wl_txpower=500
+# nvram set wl0_txpower=500
+# nvram set wl1_txpower=500
+# nvram set wl2_txpower=500
+
 # Commit changes
+# Restart wireless services to apply changes: service restart_wireless
+
 nvram commit
