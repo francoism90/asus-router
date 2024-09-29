@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/jffs/scripts/wlboost >/dev/null 2>&1 & # wlboost
+# /jffs/scripts/scmerlin startup & # scMerlin
+# /jffs/addons/scmerlin.d/S95tailtaintdns start >/dev/null 2>&1 & # scMerlin - tailtaintdns
