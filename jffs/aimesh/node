@@ -12,8 +12,8 @@ nvram set re_mode=0
 nvram set sw_mode=1
 nvram set sw_mode=3 # revert afterwards
 
-# To sync (or not sync) channels between nodes
+# To disable syncing channels between nodes
 
-nvram set wl0_chsync=1
-nvram set wl1_chsync=1
-nvram set wl2_chsync=1
+nvram set wl0_chsync=0
+nvram set wl1_chsync=0
+nvram set wl2_chsync=0
