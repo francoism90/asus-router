@@ -13,9 +13,11 @@ The purpose is to expose all possible features first, and adjust them to the leg
 It seems most nvram settings are the same for ASUS routers, and are being synced when using AiMesh.
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8 (AiMesh node).
 
-To be sure the nvram doesn't (soft-)brick your router/APs, please `nvram dump` first, and save the current nvram dump somewhere safe!
+To be sure the nvram adjustments doesn't (soft-)brick your router/APs, please `nvram dump` first, and save the current nvram dump somewhere safe!
 
 A massive shoutout goes out to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
+
+> Please note: do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
 
 ## Getting started
 
