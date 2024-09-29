@@ -1,0 +1,127 @@
+#!/bin/sh
+
+# Base adjustments
+nvram set jffs2_on=1
+nvram set jffs2_scripts=1
+
+# Channel adjustments
+nvram set 0:ccode=#a
+nvram set 0:regrev=0
+nvram set 1:ccode=#a
+nvram set 1:regrev=0
+nvram set 2:ccode=#a
+nvram set 2:regrev=0
+nvram set acs_ch13=1
+nvram set acs_dfs=1
+nvram set acs_unii4=1
+nvram set cfg_ui_region_disable=1
+nvram set location_code=#a
+nvram set territory_code=US/02
+nvram set wl_acs_bgdfs_enab=0
+nvram set wl_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl_acs_boot_only=1
+nvram set wl_acs_dfs=1
+nvram set wl_acs_excl_chans_dfs=
+nvram set wl_acs_excl_chans=
+nvram set wl_country_code=#a
+nvram set wl_country_rev=0
+nvram set wl_reg_mode=h
+nvram set wl0_acs_bgdfs_enab=0
+nvram set wl0_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl0_acs_boot_only=1
+nvram set wl0_acs_dfs=1
+nvram set wl0_acs_excl_chans_base=
+nvram set wl0_acs_excl_chans_cfg=
+nvram set wl0_acs_excl_chans_valid=
+nvram set wl0_acs_excl_chans=
+nvram set wl0_chlist="1 2 3 4 5 6 7 8 9 10 11 12 13 14"
+nvram set wl0_country_code=#a
+nvram set wl0_country_rev=0
+nvram set wl0_reg_mode=h
+nvram set wl1_acs_bgdfs_enab=0
+nvram set wl1_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl1_acs_boot_only=1
+nvram set wl1_acs_dfs=1
+nvram set wl1_acs_excl_chans_base=
+nvram set wl1_acs_excl_chans_cfg=
+nvram set wl1_acs_excl_chans_valid=
+nvram set wl1_acs_excl_chans=
+nvram set wl1_chlist="36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177"
+nvram set wl1_country_code=#a
+nvram set wl1_country_rev=0
+nvram set wl1_reg_mode=h
+nvram set wl2_acs_bgdfs_enab=0
+nvram set wl2_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl2_acs_boot_only=1
+nvram set wl2_acs_dfs=1
+nvram set wl2_acs_excl_chans_base=
+nvram set wl2_acs_excl_chans_cfg=
+nvram set wl2_acs_excl_chans_valid=
+nvram set wl2_acs_excl_chans=
+nvram set wl2_chlist="36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177"
+nvram set wl2_country_code=#a
+nvram set wl2_country_rev=0
+nvram set wl2_reg_mode=h
+
+# TX Power adjustments (risky!)
+nvram set 0:maxp2ga0=120
+nvram set 0:maxp2ga1=120
+nvram set 1:maxp5gb0a0=120
+nvram set 1:maxp5gb0a1=120
+nvram set 1:maxp5gb0a2=120
+nvram set 1:maxp5gb0a3=120
+nvram set 1:maxp5gb1a0=120
+nvram set 1:maxp5gb1a1=120
+nvram set 1:maxp5gb1a2=120
+nvram set 1:maxp5gb1a3=120
+nvram set 1:maxp5gb2a0=120
+nvram set 1:maxp5gb2a1=120
+nvram set 1:maxp5gb2a2=120
+nvram set 1:maxp5gb2a3=120
+nvram set 1:maxp5gb3a0=120
+nvram set 1:maxp5gb3a1=120
+nvram set 1:maxp5gb3a2=120
+nvram set 1:maxp5gb3a3=120
+nvram set 1:maxp5gb4a0=120
+nvram set 1:maxp5gb4a1=120
+nvram set 1:maxp5gb4a2=120
+nvram set 1:maxp5gb4a3=120
+nvram set 2:maxp5gb0a0=120
+nvram set 2:maxp5gb0a1=120
+nvram set 2:maxp5gb0a2=120
+nvram set 2:maxp5gb0a3=120
+nvram set 2:maxp5gb1a0=120
+nvram set 2:maxp5gb1a1=120
+nvram set 2:maxp5gb1a2=120
+nvram set 2:maxp5gb1a3=120
+nvram set 2:maxp5gb2a0=120
+nvram set 2:maxp5gb2a1=120
+nvram set 2:maxp5gb2a2=120
+nvram set 2:maxp5gb2a3=120
+nvram set 2:maxp5gb3a0=120
+nvram set 2:maxp5gb3a1=120
+nvram set 2:maxp5gb3a2=120
+nvram set 2:maxp5gb3a3=120
+nvram set 2:maxp5gb4a0=120
+nvram set 2:maxp5gb4a1=120
+nvram set 2:maxp5gb4a2=120
+nvram set 2:maxp5gb4a3=120
+nvram set wl_txpower=500
+nvram set wl0_txpower=500
+nvram set wl1_txpower=500
+nvram set wl2_txpower=500
+
+# force 2.4GHz channels
+# nvram set wl0_sel_channel=6
+# nvram set wl0_chanspec=6l
+
+# force 5GHz channels
+# nvram set wl1_sel_channel=48
+# nvram set wl1_chanspec=48/160
+
+# force 5-2GHz channels (AIMesh node)
+# nvram set wl2_sel_channel=48
+# nvram set wl2_chanspec=48/160
+
+# Commit changes
+nvram commit
