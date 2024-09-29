@@ -26,7 +26,7 @@ See https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/ for ins
 
 ### User-scripts
 
-1. Create a `/jffs/scripts/wlboost` file (see [example](https://github.com/francoism90/asus-router/blob/main/jffs/scripts/wlboost)), and paste your `nvram` overwrites into this file.
+1. Create a `/jffs/scripts/wlboost` file (see [given examples](https://github.com/francoism90/asus-router/tree/main/jffs/scripts)), and paste your `nvram` overwrites into the `wlboost` file.
 
 2. Create/adjust `/jffs/scripts/init-start`:
 
@@ -68,13 +68,17 @@ if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost service_eve
 chmod a+rx /jffs/scripts/*
 ```
 
-## Applying changes
+### Applying changes
 
 You need to reboot the router to apply changes:
 
 ```sh
 /jffs/scripts/wlboost
 reboot
-``` 
+```
 
-To make the changes persistent, make sure to also adjust the `jffs/scripts/wlboost` script.
+## Testing
+
+To make changes persistent, adjust the `jffs/scripts/wlboost` file.
+
+Restart the wireless service using `service restart_wireless` or by using the ScMerlin interface.
