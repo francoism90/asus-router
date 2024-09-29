@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# You need to connect over SSH to your AiMesh node.
+# The credentials and ssh-key (if any) is the same as the main router.
+
+# To access an AiMesh node interface
+
+nvram set re_mode=0
+
+# To expose the full interface on an AiMesh node
+
+nvram set sw_mode=1
+nvram set sw_mode=3 # revert afterwards
+
+# To sync (or not sync) channels between nodes
+
+nvram set wl0_chsync=1
+nvram set wl1_chsync=1
+nvram set wl2_chsync=1
