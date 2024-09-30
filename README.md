@@ -4,35 +4,35 @@
 > The instructions are provided for testing, learning, preventing e-waste, and should be use with care.<br>
 > We (including contributers + commentators) are not responsible for any damage to your device(s) or any legal issues.
 
-# Introduction
+## Introduction
 
-This repo provides nvram adjusts that may enable additional channels and TX-power (in most cases don't) on ASUS Merlin provided routers.
+This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. Please use the instructions will care, and read the disclaimer before applying any changes.
 
-The purpose is to adjust them to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
+The purpose is to adjust a router of AP to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
 
-It seems most nvram settings are the same for ASUS routers, and are being synced when using AiMesh.
-The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 + ASUS ZenWiFi AX XT8 (AiMesh node).
+The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 
-To be sure the nvram adjustments doesn't (soft-)brick your router/APs, please `nvram dump` first, and save the current nvram dump somewhere safe!
+> Note: most modern wireless devices use something called Location Aware Regulatory (LAR), and other hidden signals to check the origin of the country.
+> This means that even changing/forcing your router's WiFi-settings, your clients may use to ignore it (use a fallback-mode) or do not connect at all.
 
 A massive shoutout goes out to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
 
-> Please note: do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
+> Note: do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
 
 ## Getting started
 
-> See https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/ for instructions.
+> See <https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/> for instructions. The guide explains both the usage of a password and SSH-keys.
 
 Login into router using SSH (password or key):
 
 1. Run `nvram dump > dump.txt`
-2. Use `scp` to copy it locally or copy the `nvram dump` directly
+2. Use `scp` to copy it locally or copy the contents of `nvram dump` directly to somewhere safe
 3. Make sure `Enable JFFS custom scripts and configs` is enabled in System settings
 4. Reboot router
 
 ### User-scripts
 
-> See https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts for details.
+> See <https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts> for details.
 
 1. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details, and paste your `nvram` overwrites into the `/jffs/scripts/wlboost` file.
 
@@ -42,25 +42,31 @@ Login into router using SSH (password or key):
 chmod a+rx /jffs/scripts/*
 ```
 
-3. You need to reboot the router to apply changes:
+3. Test the changes (you may want to comment the `nvram commit` line temporary):
 
-```sh
+```bash
 /jffs/scripts/wlboost
+```
+
+4. If everything keeps working, reboot the router:
+
+```bash
 reboot
 ```
+
+When applying WiFi settings, it should automatically run `wlboost` after.
 
 ## Testing
 
 To make changes persistent, adjust the `/jffs/scripts/wlboost` file.
 
-Restart the wireless service using `service restart_wireless` or by using the ScMerlin interface.
-
-This method is preferred, since the router UI may overrule values incorrectly.
+Restart the wireless service using `service restart_wireless` or by using the scMerlin addon. These methods are preferred, since the router itself may overrule values.
 
 ## Troubleshooting
 
 It's possible to restore factory nvram settings by using a hard reset:
-- https://www.asus.com/support/faq/1039077/
-- https://www.asus.com/support/faq/1039078/
+
+- <https://www.asus.com/support/faq/1039077/>
+- <https://www.asus.com/support/faq/1039078/>
 
 This will clear all overwrites and restores factory defaults.

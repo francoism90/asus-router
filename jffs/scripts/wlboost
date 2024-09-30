@@ -1,7 +1,9 @@
 #!/bin/sh
 
+# Source: https://github.com/RMerl/asuswrt-merlin/blob/master/release/src/router/rc/sysdeps/init-broadcom.c
+
 # Base adjustments
-# This are the basic settings to enable JFFS.
+# Basic settings to enable JFFS.
 
 nvram set jffs2_on=1
 nvram set jffs2_scripts=1
