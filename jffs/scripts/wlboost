@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # Source: https://github.com/RMerl/asuswrt-merlin/blob/master/release/src/router/rc/sysdeps/init-broadcom.c
+# Tested with ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
+# Please adjusts the given nvram variables (nvram dump) with values of your own device!
 
 # Base adjustments
 # Basic settings to enable JFFS.
