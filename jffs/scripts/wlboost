@@ -4,12 +4,6 @@
 # Tested with ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 # Please adjusts the given nvram variables (nvram dump) with values of your own device!
 
-# Base adjustments
-# Basic settings to enable JFFS.
-
-nvram set jffs2_on=1
-nvram set jffs2_scripts=1
-
 # Channel adjustments
 # This tries to enable all channels for the router, including DFS channels.
 # Please make sure to keep in a safe range for your country.
@@ -159,8 +153,3 @@ nvram set wl2_reg_mode=h
 # nvram set wl0_txpower=500
 # nvram set wl1_txpower=500
 # nvram set wl2_txpower=500
-
-# Commit changes
-# Restart wireless services to apply changes: service restart_wireless
-
-nvram commit

@@ -26,35 +26,48 @@ A massive shoutout goes out to the contributes on my previous [gist](https://gis
 Login into router using SSH (password or key):
 
 1. Run `nvram dump > dump.txt`
-2. Use `scp` to copy it locally or copy the contents of `nvram dump` directly to somewhere safe
-3. Make sure `Enable JFFS custom scripts and configs` is enabled in System settings
+2. Use `scp` to copy it to your working machine or copy the contents of `nvram dump` directly to somewhere safe
+3. Make sure `Enable JFFS custom scripts and configs` is enabled and working in System settings
 4. Reboot router
 
 ### User-scripts
 
 > See <https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts> for details.
 
-1. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details, and paste your `nvram` overwrites into the `/jffs/scripts/wlboost` file.
+1. Make sure JFFS has been enabled:
 
-2. Make sure scripts are executable:
+```bash
+nvram set jffs2_on=1
+nvram set jffs2_scripts=1
+nvram commit
+```
+
+2. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details, and paste your `nvram` overwrites into the `/jffs/scripts/wlboost` file.
+
+3. Make sure scripts are executable:
 
 ```bash
 chmod a+rx /jffs/scripts/*
 ```
 
-3. Test the changes (you may want to comment the `nvram commit` line temporary):
+4. Test the changes:
 
 ```bash
 /jffs/scripts/wlboost
 ```
 
-4. If everything keeps working, reboot the router:
+5. If everything keeps working, reboot the router:
 
 ```bash
 reboot
 ```
 
-When applying WiFi settings, it should automatically run `wlboost` after.
+6. You may want to permanently write the changes into nvram to let it survive on a reboot:
+
+```bash
+/jffs/scripts/wlboost
+nvram commit
+```
 
 ## Testing
 
