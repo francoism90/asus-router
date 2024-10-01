@@ -12,12 +12,12 @@ The purpose is to adjust a router of AP to the legal state of the country (e.g. 
 
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 
-A massive shoutout goes out to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
+> Note: do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
 
 > Note: most modern wireless devices use something called Location Aware Regulatory (LAR), and other hidden signals to check the origin of the country.
-> This means that even changing/forcing your router's WiFi-settings, your clients may use to ignore it (use a fallback-mode) or do not connect at all.
+> This means that even changing/forcing your router's WiFi-settings, your clients may choose to ignore it (use a fallback-mode) or do not connect at all.
 
-> Note: do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
+A massive shoutout goes out to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
 
 ## Getting started
 
