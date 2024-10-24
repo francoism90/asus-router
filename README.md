@@ -6,18 +6,18 @@
 
 ## Introduction
 
-This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. Please use the instructions will care, and read the disclaimer before applying any changes.
+This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. Please use the instructions with care, and read the disclaimer before applying any changes.
 
-The purpose is to adjust a router of AP to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
+The purpose is to adjust a router of AP to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched. Since the overruling happens in memory, the nvram writes should be minimal.
 
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 
-> Note: do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
+> Note: Please do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects about these tweaks. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
 
-> Note: most modern wireless devices use something called Location Aware Regulatory (LAR), and other hidden signals to check the origin of the country.
-> This means that even changing/forcing your router's WiFi-settings, your clients may choose to ignore it (use a fallback-mode) or do not connect at all.
+> Note: Most modern wireless devices use something called Location Aware Regulatory (LAR), and other hidden signals to check the origin of the country.
+> This means that even changing/forcing your router's WiFi-settings, your clients may choose to ignore it (use a fallback-mode) or do not connect at all. See troubleshooting if this happens in your case.
 
-A massive shoutout goes out to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/)!
+A massive shoutout goes out to the contributes on my previous [gist](https://gist.github.com/francoism90/3dede7973354d067c41bff5e54203fe9/), and members of the [SNBForums](https://www.snbforums.com/) for findings and information about certain parameters.
 
 ## Getting started
 
