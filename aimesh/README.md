@@ -26,7 +26,7 @@ nvram set re_mode=1 # revert afterwards!
 
 ```bash
 nvram get sw_mode # make sure to save current value!
-nvram set sw_mode=1 # choose between 1-5
+nvram set sw_mode=2 # choose between 1-5
 nvram set sw_mode=3 # revert afterwards to previous value or use 3 (repeater-mode)
 ```
 
