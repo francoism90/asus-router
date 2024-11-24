@@ -28,7 +28,10 @@ nvram set re_mode=1 # revert afterwards!
 nvram get sw_mode # make sure to save current value!
 nvram set sw_mode=2 # choose between 1-5
 nvram set sw_mode=3 # revert afterwards to previous value or use 3 (repeater-mode)
+reboot
 ```
+
+It may take a while after the reboot for the node to be re-added again to the netwerk.
 
 ## Using scripts
 
