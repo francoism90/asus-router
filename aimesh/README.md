@@ -1,5 +1,7 @@
 # AiMesh
 
+> Tip: If your router or AP doesn't support Asuswrt-Merlin, please checkout [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/).
+
 You need to connect over SSH to your AiMesh node.
 The IP Address is listed on the Network-tab of the AiMesh node.
 
@@ -9,11 +11,20 @@ The credentials and SSH-key (recommended) is the same as the main router, as the
 ssh 192.168.x.x
 ```
 
-> Note: Changing an AiMesh node directly, may cause it stop working.
-> It is recommended to work with nvram variables, and not using the web interface itself.
-> See Troubleshooting when the node doesn't connect anymore.
+## Using scripts
 
-## Disable route redirect
+It is recommended to have the same values defined in `wlboost`, even when the main router doesn't offer that feature as they are in sync (e.g. the `wl2` interface may not exists on the AiMesh router, but it's settings are still being pushed to the node(s)).
+
+You may also want to setup `wlboost` on the AiMesh node (including service scripts).
+Even when it should apply the same settings, it may not sync everything.
+
+## Experimental
+
+> Warning: The following may cause your AiMesh-node from working!
+
+The following are experimental, please use at your own risk.
+
+### Disable route redirect
 
 This allows you to enter the AiMesh-node interface:
 
@@ -22,7 +33,7 @@ nvram set re_mode=0
 nvram set re_mode=1 # revert afterwards!
 ```
 
-## Change AiMesh node mode
+### Change AiMesh node mode
 
 ```bash
 nvram get sw_mode # make sure to save current value!
@@ -33,14 +44,7 @@ reboot
 
 It may take a while after the reboot for the node to be re-added again to the netwerk.
 
-## Using scripts
-
-It is recommended to have the same values defined in `wlboost`, even when the main router doesn't offer that feature as they are in sync (e.g. the `wl2` interface may not exists on the AiMesh router, but it's settings are still being pushed to the node).
-
-You can also run `wlboost` on the AiMesh node.
-Even when it should sync settings, it seems not to touch everything.
-
-## Disable syncing channels between nodes
+### Disable syncing channels between nodes
 
 This seems to control channel syncthing, however it may cause your node being unable to connect to the AiMesh router.
 
@@ -51,8 +55,6 @@ nvram set wl0_chsync=0
 nvram set wl1_chsync=0
 nvram set wl2_chsync=0
 ```
-
-Only run `nvram commit` on the AiMesh node, if restarting the node doesn't cause any issues!
 
 ## Troubleshooting
 
