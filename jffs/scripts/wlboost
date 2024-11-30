@@ -95,7 +95,7 @@ nvram set wl2_reg_mode=h
 
 # force AiMesh channel
 # nvram set multi_channel_5g=48
-# nvram set wl_chanspec=48/160
+# nvram set wl_chanspec=149/160
 
 # TX Power adjustments
 # Please note it may cause interference to other devices, and heat up the router.
