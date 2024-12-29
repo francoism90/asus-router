@@ -31,7 +31,6 @@ nvram set wl_bw_cap=0xff
 nvram set wl_country_code=#a
 nvram set wl_country_rev=0
 nvram set wl_reg_mode=h
-nvram set wlnband_list="2g1<5g1<5g1"
 nvram set wl0_acs_dfs=1
 nvram set wl0_acs_excl_chans_base=
 nvram set wl0_acs_excl_chans_cfg=
