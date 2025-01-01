@@ -5,8 +5,61 @@
 # Please adjusts the given nvram variables (nvram dump) with values of your own device.
 # See based source for more details: https://github.com/RMerl/asuswrt-merlin.ng
 
+# ACS adjustments (Auto Channel Selection), including DFS/UNII4 channels.
+# This tries to prevent the router from falling back to default channels.
+nvram set acs_ch13=1
+nvram set acs_dfs=1
+nvram set acs_no_restrict_align=1
+nvram set acs_unii4=1
+nvram set wl_acs_bgdfs_ahead=0
+nvram set wl_acs_bgdfs_avoid_on_far_sta=0
+nvram set wl_acs_bgdfs_enab=0
+nvram set wl_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl_acs_boot_only=1
+nvram set wl_acs_dfs=1
+nvram set wl_acs_excl_chans_dfs_2=
+nvram set wl_acs_excl_chans_dfs=
+nvram set wl_acs_excl_chans=
+nvram set wl_acs_start_on_nondfs=0
+nvram set wl_acsd_scs_dfs_scan=0
+nvram set wl0_acs_bgdfs_ahead=0
+nvram set wl0_acs_bgdfs_avoid_on_far_sta=0
+nvram set wl0_acs_bgdfs_enab=0
+nvram set wl0_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl0_acs_boot_only=1
+nvram set wl0_acs_dfs=1
+nvram set wl0_acs_excl_chans_base=
+nvram set wl0_acs_excl_chans_cfg=
+nvram set wl0_acs_excl_chans_valid=
+nvram set wl0_acs_excl_chans=
+nvram set wl0_acs_fcs_mode=0
+nvram set wl0_acs_start_on_nondfs=0
+nvram set wl0_acsd_scs_dfs_scan=0
+nvram set wl1_acs_bgdfs_ahead=0
+nvram set wl1_acs_bgdfs_avoid_on_far_sta=0
+nvram set wl1_acs_bgdfs_enab=0
+nvram set wl1_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl1_acs_boot_only=1
+nvram set wl1_acs_dfs=1
+nvram set wl1_acs_excl_chans_base=
+nvram set wl1_acs_excl_chans_cfg=
+nvram set wl1_acs_excl_chans_valid=
+nvram set wl1_acs_excl_chans=
+nvram set wl1_acsd_scs_dfs_scan=0
+nvram set wl2_acs_bgdfs_ahead=0
+nvram set wl2_acs_bgdfs_avoid_on_far_sta=0
+nvram set wl2_acs_bgdfs_enab=0
+nvram set wl2_acs_bgdfs_fallback_blocking_cac=0
+nvram set wl2_acs_boot_only=1
+nvram set wl2_acs_dfs=1
+nvram set wl2_acs_excl_chans_base=
+nvram set wl2_acs_excl_chans_cfg=
+nvram set wl2_acs_excl_chans_valid=
+nvram set wl2_acs_excl_chans=
+nvram set wl2_acsd_scs_dfs_scan=0
+
 # Country adjustments
-# This tries to force all channels for a router, including DFS/UNII4 channels.
+# This tries to force all channels for a router.
 # Please make sure to keep in a safe range for your country.
 
 nvram set 0:ccode=#a
@@ -15,43 +68,21 @@ nvram set 1:ccode=#a
 nvram set 1:regrev=0
 nvram set 2:ccode=#a
 nvram set 2:regrev=0
-nvram set acs_ch13=1
-nvram set acs_dfs=1
-nvram set acs_unii4=1
 nvram set cfg_ui_region_disable=0
 nvram set location_code=#a
 nvram set territory_code=US/02
-nvram set wl_acs_dfs=1
-nvram set wl_acs_excl_chans_dfs_2=
-nvram set wl_acs_excl_chans_dfs=
-nvram set wl_acs_excl_chans=
 nvram set wl_country_code=#a
 nvram set wl_country_rev=0
 nvram set wl_reg_mode=h
-nvram set wl0_acs_dfs=1
-nvram set wl0_acs_excl_chans_base=
-nvram set wl0_acs_excl_chans_cfg=
-nvram set wl0_acs_excl_chans_valid=
-nvram set wl0_acs_excl_chans=
 nvram set wl0_chlist="1 2 3 4 5 6 7 8 9 10 11 12 13 14"
 nvram set wl0_country_code=#a
 nvram set wl0_country_rev=0
 nvram set wl0_reg_mode=h
-nvram set wl1_acs_dfs=1
-nvram set wl1_acs_excl_chans_base=
-nvram set wl1_acs_excl_chans_cfg=
-nvram set wl1_acs_excl_chans_valid=
-nvram set wl1_acs_excl_chans=
 nvram set wl1_chansps="36 40 44 48 52 56 60 64 36l 40u 44l 48u 52l 56u 60l 64u 36/80 40/80 44/80 48/80 52/80 56/80 60/80 64/80 36/160 40/160 44/160 48/160 52/160 56/160 60/160 64/160 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177 100l 104u 108l 112u 116l 120u 124l 128u 132l 136u 140l 144u 149l 153u 157l 161u 165l 169u 173l 177u 100/80 104/80 108/80 112/80 116/80 120/80 124/80 128/80 132/80 136/80 140/80 144/80 149/80 153/80 157/80 161/80 165/80 169/80 173/80 177/80 100/160 104/160 108/160 112/160 116/160 120/160 124/160 128/160 149/160 153/160 157/160 161/160 165/160 169/160 173/160 177/160"
 nvram set wl1_chlist="36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177"
 nvram set wl1_country_code=#a
 nvram set wl1_country_rev=0
 nvram set wl1_reg_mode=h
-nvram set wl2_acs_dfs=1
-nvram set wl2_acs_excl_chans_base=
-nvram set wl2_acs_excl_chans_cfg=
-nvram set wl2_acs_excl_chans_valid=
-nvram set wl2_acs_excl_chans=
 nvram set wl2_chansps="36 40 44 48 52 56 60 64 36l 40u 44l 48u 52l 56u 60l 64u 36/80 40/80 44/80 48/80 52/80 56/80 60/80 64/80 36/160 40/160 44/160 48/160 52/160 56/160 60/160 64/160 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177 100l 104u 108l 112u 116l 120u 124l 128u 132l 136u 140l 144u 149l 153u 157l 161u 165l 169u 173l 177u 100/80 104/80 108/80 112/80 116/80 120/80 124/80 128/80 132/80 136/80 140/80 144/80 149/80 153/80 157/80 161/80 165/80 169/80 173/80 177/80 100/160 104/160 108/160 112/160 116/160 120/160 124/160 128/160 149/160 153/160 157/160 161/160 165/160 169/160 173/160 177/160"
 nvram set wl2_chlist="36 40 44 48 52 56 60 64 100 104 108 112 116 120 124 128 132 136 140 144 149 153 157 161 165 169 173 177"
 nvram set wl2_country_code=#a
@@ -73,28 +104,6 @@ nvram set wl2_reg_mode=h
 # nvram set wl2_band5grp=7
 # nvram set wl2_bw_160=1
 # nvram set wl2_bw_cap=7
-
-# The following examples can be used to overrule channel settings (including AIMesh nodes).
-# This approach is recommended over the GUI.
-# Uncomment the lines below to enable the settings.
-
-# force 2.4GHz channel (6l = 6 lower, 6u = 6 upper)
-# nvram set wl0_sel_channel=6
-# nvram set wl0_chanspec=6u
-
-# force 5GHz channel
-# AiMesh channel range in most cases: 36-64
-# nvram set wl1_sel_channel=48
-# nvram set wl1_chanspec=48/160
-
-# force 5GHz-2 channel (if available)
-# AiMesh channel range in most cases: 100-177
-# nvram set wl2_sel_channel=149
-# nvram set wl2_chanspec=149/160
-
-# force AiMesh channel
-# nvram set multi_channel_5g=48
-# nvram set wl_chanspec=149/160
 
 # TX Power adjustments
 # Please note it may cause interference to other devices, and heat up the router.
