@@ -55,11 +55,16 @@ nvram commit
 chmod a+rx /jffs/scripts/*
 ```
 
-6. Apply nvram overwrites and reboot:
+6. Apply nvram overwrites:
 
 ```bash
 /jffs/scripts/wlupdate
-reboot
+```
+
+If they work, you can make them persistent on reboots:
+
+```bash
+nvram commit
 ```
 
 7. To validate the wireless settings, you may want to use `com.vrem.wifianalyzer`.

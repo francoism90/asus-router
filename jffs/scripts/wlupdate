@@ -170,6 +170,3 @@ nvram set wl2_reg_mode=h
 # nvram set 2:maxp5gb6a1=120
 # nvram set 2:maxp5gb6a2=120
 # nvram set 2:maxp5gb6a3=120
-
-# commit changes
-nvram commit
