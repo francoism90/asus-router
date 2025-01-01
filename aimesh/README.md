@@ -15,12 +15,12 @@ ssh 192.168.x.x
 
 It is recommended to have the same values defined in `wlboost`, even when the main router doesn't offer that feature as they are in sync (e.g. the `wl2` interface may not exists on the AiMesh router, but it's settings are still being pushed to the node(s)).
 
-You may also want to setup `wlboost` on the AiMesh node (including service scripts).
-Even when it should apply the same settings, it may not sync everything.
+You may also want to setup `wlboost` on the AiMesh node (including service scripts). Comment out the first entries, and adjust the values for the AiMesh node.
 
 ## Experimental
 
-> Warning: The following may cause your AiMesh-node from working!
+> Warning: The following may cause your AiMesh-node from stop working!<br>
+> See Troubleshooting if this happens.
 
 The following are experimental, please use at your own risk.
 
@@ -43,18 +43,6 @@ reboot
 ```
 
 It may take a while after the reboot for the node to be re-added again to the netwerk.
-
-### Disable syncing channels between nodes
-
-This seems to control channel syncthing, however it may cause your node being unable to connect to the AiMesh router.
-
-Please use this option with care!
-
-```bash
-nvram set wl0_chsync=0
-nvram set wl1_chsync=0
-nvram set wl2_chsync=0
-```
 
 ## Troubleshooting
 
