@@ -21,5 +21,15 @@ nvram unset wl_acs_bgdfs_fallback_blocking_cac
 nvram unset wl_acs_boot_only
 nvram unset wl_dfs_bw_fallback
 nvram unset wl2_dfs_bw_fallback
+nvram unset acs_band1
+nvram unset acs_band3
+nvram unset wl_bw_160
+nvram unset wl_bw_cap
+nvram unset wl0_bw_cap
+nvram unset wl1_band5grp
+nvram unset wl1_bw_cap
+nvram unset wl2_band5grp
+nvram unset wl2_bw_160
+nvram unset wl2_bw_cap
 nvram commit
 reboot
