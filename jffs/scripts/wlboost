@@ -5,7 +5,7 @@
 # Please adjusts the given nvram variables (nvram dump) with values of your own device.
 # See based source for more details: https://github.com/RMerl/asuswrt-merlin.ng
 
-# Force 5GHz-1 specs
+# Force 5GHz-1 spec
 wl -i eth6 down
 wl -i eth6 country ALL
 wl -i eth6 country_abbrev_override "US"
@@ -14,3 +14,25 @@ wl -i eth6 chanspec 149/160
 wl -i eth6 up
 wl -i eth6 5g_rate auto
 wl -i eth6 txpwr1 -o -m 1496
+
+# On an AiMesh node, you can use the following commands to force the 5GHz-1 & 5GHz-2 specs:
+
+# Force 5GHz-1 spec
+# wl -i eth5 down
+# wl -i eth5 country ALL
+# wl -i eth5 country_abbrev_override "US"
+# wl -i eth5 regulatory 1
+# wl -i eth5 chanspec 48/160
+# wl -i eth5 up
+# wl -i eth5 5g_rate auto
+# wl -i eth5 txpwr1 -o -m 1496
+
+# Force 5GHz-2 spec (if available)
+# wl -i eth6 down
+# wl -i eth6 country ALL
+# wl -i eth6 country_abbrev_override "US"
+# wl -i eth6 regulatory 1
+# wl -i eth6 chanspec 149/160
+# wl -i eth6 up
+# wl -i eth6 5g_rate auto
+# wl -i eth6 txpwr1 -o -m 1496

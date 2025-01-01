@@ -2,5 +2,4 @@
 
 if echo "$2" | /bin/grep -q "acsd"; then { /jffs/scripts/wlboost & }; fi # wlboost
 if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlboost & }; fi # wlboost
-if echo "$2" | /bin/grep -q "wlceventd"; then { /jffs/scripts/wlboost & }; fi # wlboost
 # if printf "%s" "$@" | /bin/grep -qE "^(((start|stop|restart|kill|reload)_?.*AdGuardHome)$)"; then { sh /jffs/addons/AdGuardHome.d/AdGuardHome.sh "$(printf "%s" "$@" | /bin/grep>

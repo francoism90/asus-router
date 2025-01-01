@@ -6,9 +6,10 @@
 
 ## Introduction
 
-This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. Please use the instructions with care, and read the disclaimer before applying any changes.
+This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers.
+Please use the instructions with care, and read the disclaimer before applying any changes.
 
-The purpose is to adjust a router of AP to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched. Since the overruling happens in memory, the nvram writes should be minimal.
+The purpose is to adjust a router of AP to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
 
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 
@@ -26,8 +27,8 @@ A massive shoutout goes out to the contributes on my previous [gist](https://gis
 Login into router using SSH (password or key):
 
 1. Run `nvram dump > dump.txt`
-2. Use `scp` to copy it to your working machine or copy the contents of `nvram dump` directly to somewhere safe
-3. Make sure `Enable JFFS custom scripts and configs` is enabled and working in System settings
+2. Use `scp` to copy it to your working machine or copy the contents of `nvram dump` to somewhere safe.
+3. Make sure `Enable JFFS custom scripts and configs` is enabled and working in System settings.
 4. Reboot router
 
 ### User-scripts
@@ -42,36 +43,30 @@ nvram set jffs2_scripts=1
 nvram commit
 ```
 
-2. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details, and paste your `nvram` overwrites into the `/jffs/scripts/wlboost` file.
+2. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details.
 
-3. Make sure scripts are executable:
+3. Update your device `nvram` overwrites into the `/jffs/scripts/wlupdate` file.
+
+4. Adjust `/jffs/scripts/wlboost` to your channel and country.
+
+5. Make sure scripts are executable:
 
 ```bash
 chmod a+rx /jffs/scripts/*
 ```
 
-4. Test the changes:
+6. Apply nvram overwrites and reboot:
 
 ```bash
-/jffs/scripts/wlboost
-```
-
-5. If everything keeps working, reboot the router:
-
-```bash
+/jffs/scripts/wlupdate
 reboot
 ```
 
-6. You may want to permanently write the changes into nvram to let it survive on a reboot:
-
-```bash
-/jffs/scripts/wlboost
-nvram commit
-```
+7. To validate the wireless settings, you may want to use `com.vrem.wifianalyzer`.
 
 ## Testing
 
-To make changes persistent, adjust the `/jffs/scripts/wlboost` file.
+To make changes persistent, adjust the `/jffs/scripts/wlboost` and `/jffs/scripts/wlupdate` files.
 
 Restart the wireless service using `service restart_wireless` or by using the scMerlin addon. These methods are preferred, since the router itself may overrule values.
 
