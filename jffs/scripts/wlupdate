@@ -20,6 +20,7 @@ nvram set wl_acs_dfs=1
 nvram set wl_acs_excl_chans_dfs_2=
 nvram set wl_acs_excl_chans_dfs=
 nvram set wl_acs_excl_chans=
+nvram set wl_acs_fcs_mode=0
 nvram set wl_acs_start_on_nondfs=0
 nvram set wl_acsd_scs_dfs_scan=0
 nvram set wl0_acs_bgdfs_ahead=0
