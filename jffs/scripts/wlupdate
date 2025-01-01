@@ -11,9 +11,9 @@ nvram set acs_ch13=1
 nvram set acs_dfs=1
 nvram set acs_no_restrict_align=1
 nvram set acs_unii4=1
-nvram set wl_acs_bgdfs_ahead=0
+nvram set wl_acs_bgdfs_ahead=1
 nvram set wl_acs_bgdfs_avoid_on_far_sta=0
-nvram set wl_acs_bgdfs_enab=0
+nvram set wl_acs_bgdfs_enab=1
 nvram set wl_acs_bgdfs_fallback_blocking_cac=0
 nvram set wl_acs_boot_only=1
 nvram set wl_acs_dfs=1
@@ -23,9 +23,9 @@ nvram set wl_acs_excl_chans=
 nvram set wl_acs_fcs_mode=0
 nvram set wl_acs_start_on_nondfs=0
 nvram set wl_acsd_scs_dfs_scan=0
-nvram set wl0_acs_bgdfs_ahead=0
+nvram set wl0_acs_bgdfs_ahead=1
 nvram set wl0_acs_bgdfs_avoid_on_far_sta=0
-nvram set wl0_acs_bgdfs_enab=0
+nvram set wl0_acs_bgdfs_enab=1
 nvram set wl0_acs_bgdfs_fallback_blocking_cac=0
 nvram set wl0_acs_boot_only=1
 nvram set wl0_acs_dfs=1
@@ -36,9 +36,9 @@ nvram set wl0_acs_excl_chans=
 nvram set wl0_acs_fcs_mode=0
 nvram set wl0_acs_start_on_nondfs=0
 nvram set wl0_acsd_scs_dfs_scan=0
-nvram set wl1_acs_bgdfs_ahead=0
+nvram set wl1_acs_bgdfs_ahead=1
 nvram set wl1_acs_bgdfs_avoid_on_far_sta=0
-nvram set wl1_acs_bgdfs_enab=0
+nvram set wl1_acs_bgdfs_enab=1
 nvram set wl1_acs_bgdfs_fallback_blocking_cac=0
 nvram set wl1_acs_boot_only=1
 nvram set wl1_acs_dfs=1
@@ -47,9 +47,9 @@ nvram set wl1_acs_excl_chans_cfg=
 nvram set wl1_acs_excl_chans_valid=
 nvram set wl1_acs_excl_chans=
 nvram set wl1_acsd_scs_dfs_scan=0
-nvram set wl2_acs_bgdfs_ahead=0
+nvram set wl2_acs_bgdfs_ahead=1
 nvram set wl2_acs_bgdfs_avoid_on_far_sta=0
-nvram set wl2_acs_bgdfs_enab=0
+nvram set wl2_acs_bgdfs_enab=1
 nvram set wl2_acs_bgdfs_fallback_blocking_cac=0
 nvram set wl2_acs_boot_only=1
 nvram set wl2_acs_dfs=1
@@ -105,6 +105,27 @@ nvram set wl2_reg_mode=h
 # nvram set wl2_band5grp=7
 # nvram set wl2_bw_160=1
 # nvram set wl2_bw_cap=7
+
+# The following examples can be used to overrule channel settings (including AIMesh nodes).
+# Uncomment the lines below to enable the settings.
+
+# force 2.4GHz channel (6l = 6 lower, 6u = 6 upper)
+# nvram set wl0_sel_channel=6
+# nvram set wl0_chanspec=6u
+
+# force 5GHz channel
+# AiMesh channel range in most cases: 36-64
+# nvram set wl1_sel_channel=48
+# nvram set wl1_chanspec=48/160
+
+# force 5GHz-2 channel (if available)
+# AiMesh channel range in most cases: 100-177
+# nvram set wl2_sel_channel=149
+# nvram set wl2_chanspec=149/160
+
+# force AiMesh channel
+# nvram set multi_channel_5g=149
+# nvram set wl_chanspec=149/160
 
 # TX Power adjustments
 # Please note it may cause interference to other devices, and heat up the router.

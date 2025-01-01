@@ -47,7 +47,7 @@ nvram commit
 
 3. Update your device `nvram` overwrites into the `/jffs/scripts/wlupdate` file.
 
-4. Adjust `/jffs/scripts/wlboost` to your channel and country.
+You may also want to use and adjust `/jffs/scripts/wlboost` to your channel and country. This script isn't called by default, but may be useful to force channels.
 
 5. Make sure scripts are executable:
 
@@ -65,6 +65,7 @@ If they work, you can make them persistent on reboots:
 
 ```bash
 nvram commit
+reboot
 ```
 
 7. To validate the wireless settings, you may want to use `com.vrem.wifianalyzer`.

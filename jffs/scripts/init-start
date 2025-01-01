@@ -1,7 +1,6 @@
 #!/bin/sh
 
 [ -x /jffs/scripts/wlupdate ] && /jffs/scripts/wlupdate &
-[ -x /jffs/scripts/wlboost ] && /jffs/scripts/wlboost &
 # [ -x /jffs/addons/AdGuardHome.d/AdGuardHome.sh ] && /jffs/addons/AdGuardHome.d/AdGuardHome.sh init-start &
 # /jffs/addons/amtm/routerdate restore # Added by amtm
 # sh /jffs/scripts/ntpbootwatchdog.sh & # scMerlin
