@@ -76,6 +76,10 @@ To make changes persistent, adjust the `/jffs/scripts/wlboost` and `/jffs/script
 
 Restart the wireless service using `service restart_wireless` or by using the scMerlin addon. These methods are preferred, since the router itself may overrule values.
 
+You may also want to _System Log_ > _Wireless Log_ page of the router:
+
+![image](https://github.com/user-attachments/assets/3775cac7-58e0-4333-b0a9-4dcec775c9fc)
+
 ## Troubleshooting
 
 It's possible to restore factory nvram settings by using a hard reset:
@@ -84,3 +88,4 @@ It's possible to restore factory nvram settings by using a hard reset:
 - <https://www.asus.com/support/faq/1039078/>
 
 This will clear all overwrites and restores factory defaults.
+
