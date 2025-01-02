@@ -3,7 +3,8 @@
 # Use at your own risk. This script is provided as-is without any warranty.
 # Tested with ASUS RT-AX58U v1 (Asuswrt-Merlin) + ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 # Please adjusts the given nvram variables (nvram dump) with values of your own device.
-# See based source for more details: https://github.com/RMerl/asuswrt-merlin.ng
+# Add node (e.g. wl2, wl3, ..) values in case of AiMesh.
+# Values are based on https://github.com/RMerl/asuswrt-merlin.ng
 
 # ACS adjustments (Auto Channel Selection), including DFS/UNII4 channels.
 # This tries to prevent the router from falling back to default channels.
@@ -109,26 +110,27 @@ nvram set wl2_reg_mode=h
 
 # force 2.4GHz channel (6l = 6 lower, 6u = 6 upper)
 # nvram set wl0_sel_channel=6
-# nvram set wl0_chanspec=6u
+# nvram set wl0_chanspec=6l
 
 # force 5GHz channel
 # AiMesh channel range in most cases: 36-64
-# nvram set wl1_sel_channel=48
-# nvram set wl1_chanspec=48/160
+# nvram set wl1_sel_channel=36
+# nvram set wl1_chanspec=36/160
 
 # force 5GHz-2 channel (if available)
 # AiMesh channel range in most cases: 100-177
-# nvram set wl2_sel_channel=149
-# nvram set wl2_chanspec=149/160
+# nvram set wl2_sel_channel=36
+# nvram set wl2_chanspec=36/160
 
 # force AiMesh channel
-# nvram set multi_channel_5g=149
-# nvram set wl_chanspec=149/160
+# Useful when the GUI doesn't allow you to choose any lower channels.
+# nvram set multi_channel_5g=36
+# nvram set wl_chanspec=36/160
 
 # TX Power adjustments
 # Please note it may cause interference to other devices, and heat up the router.
 # Uncomment lines below to enable TX power increases.
-# Add node values in case of AiMesh.
+# Add node (e.g. wl2, wl3, ..) values in case of AiMesh.
 
 # 2.4GHz channels
 # nvram set wl0_txpower=500
