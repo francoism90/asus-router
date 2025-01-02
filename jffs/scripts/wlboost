@@ -1,11 +1,9 @@
 #!/bin/sh
 
 # Use at your own risk. This script is provided as-is without any warranty.
-# Tested with ASUS RT-AX58U v1 (Asuswrt-Merlin) + ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
-# Please adjusts the given nvram variables (nvram dump) with values of your own device.
-# See based source for more details: https://github.com/RMerl/asuswrt-merlin.ng
+# This script may be used for testing, in most cases the wlupdate script should work fine.
 
-# Force 5GHz-1 spec
+# Force 5GHz-1 specs
 wl -i eth6 down
 wl -i eth6 country ALL
 wl -i eth6 country_abbrev_override "US"
@@ -15,17 +13,7 @@ wl -i eth6 up
 wl -i eth6 5g_rate auto
 wl -i eth6 txpwr1 -o -m 1496
 
-# On an AiMesh node, you can use the following commands to force the 5GHz-1 & 5GHz-2 specs:
-
-# Force 5GHz-1 spec
-# wl -i eth5 down
-# wl -i eth5 country ALL
-# wl -i eth5 country_abbrev_override "US"
-# wl -i eth5 regulatory 1
-# wl -i eth5 chanspec 48/160
-# wl -i eth5 up
-# wl -i eth5 5g_rate auto
-# wl -i eth5 txpwr1 -o -m 1496
+# On an AiMesh node, and if supported, you can use the following commands to force the 5GHz-2 (radio-2) specs:
 
 # Force 5GHz-2 spec (if available)
 # wl -i eth6 down
