@@ -89,21 +89,21 @@ nvram set wl2_country_code=#a
 nvram set wl2_country_rev=0
 nvram set wl2_reg_mode=h
 
-# The following tries to force all 5G/6G bands to allow 160MHz.
+# The following tries to force all 5G/6G bands to allow 160MHz (US band).
 # It also tries to remove any band limits.
-# This may be unwanted or not supported by your devices.
+# This may be unwanted or not supported by your devices, please validate overwrites.
 
-# nvram set acs_band1=0
+# nvram set acs_band1=1
 # nvram set acs_band3=1
 # nvram set wl_bw_160=1
-# nvram set wl_bw_cap=7
-# nvram set wl0_bw_cap=7
-# nvram set wl1_band5grp=7
-# nvram set wl1_bw_cap=7
+# nvram set wl_bw_cap=0xff
+# nvram set wl0_bw_cap=0xff
+# nvram set wl1_band5grp=9
 # nvram set wl1_bw_160=1
-# nvram set wl2_band5grp=7
+# nvram set wl1_bw_cap=0xff
+# nvram set wl2_band5grp=9
 # nvram set wl2_bw_160=1
-# nvram set wl2_bw_cap=7
+# nvram set wl2_bw_cap=0xff
 
 # The following examples can be used to overrule channel settings (including AIMesh nodes).
 # Uncomment the lines below to enable the settings.
