@@ -10,6 +10,7 @@
 # This tries to prevent the router from falling back to default channels.
 nvram set acs_ch13=1
 nvram set acs_dfs=1
+nvram set acs_2g_ch_no_restrict=1
 nvram set acs_no_restrict_align=1
 nvram set acs_unii4=1
 nvram set wl_acs_bgdfs_ahead=1
