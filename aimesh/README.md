@@ -17,7 +17,7 @@ It is recommended to have the same values defined in `wlboost`, even when the ma
 
 You may also want to setup `wlboost` on the AiMesh node (including service scripts). Comment out the first entries, and adjust the values for the AiMesh node.
 
-## Experimental
+## Access Web GUI
 
 > Warning: The following may cause your AiMesh-node from stop working!<br>
 > See Troubleshooting if this happens.
@@ -33,6 +33,22 @@ nvram set re_mode=0
 nvram set re_mode=1 # revert afterwards!
 ```
 
+This means you can change your WiFi settings (and open other pages):
+
+- <http://192.168.x.x/Advanced_Wireless_Content.asp>
+- <http://192.168.x.x/Advanced_WAdvanced_Content.asp>
+
+After a reboot (see `nvram set re_mode=1`), it may take a time before the AiMesh node is ready.
+
+## Troubleshooting
+
+It's possible to restore factory nvram settings by using a hard reset:
+
+- <https://www.asus.com/support/faq/1039077/>
+- <https://www.asus.com/support/faq/1039078/>
+
+This will clear all overwrites and restores factory defaults.
+
 ### Change AiMesh node mode
 
 ```bash
@@ -44,11 +60,3 @@ reboot
 
 It may take a while after the reboot for the node to be re-added again to the netwerk.
 
-## Troubleshooting
-
-It's possible to restore factory nvram settings by using a hard reset:
-
-- <https://www.asus.com/support/faq/1039077/>
-- <https://www.asus.com/support/faq/1039078/>
-
-This will clear all overwrites and restores factory defaults.
