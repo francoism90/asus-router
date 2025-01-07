@@ -30,7 +30,6 @@ This allows you to enter the AiMesh-node interface:
 
 ```bash
 nvram set re_mode=0
-nvram set re_mode=1 # revert afterwards!
 ```
 
 This means you can change your WiFi settings (and open other pages):
@@ -38,7 +37,12 @@ This means you can change your WiFi settings (and open other pages):
 - <http://192.168.x.x/Advanced_Wireless_Content.asp>
 - <http://192.168.x.x/Advanced_WAdvanced_Content.asp>
 
-After a reboot (see `nvram set re_mode=1`), it may take a time before the AiMesh node is ready.
+After a reboot, it may take some time before the AiMesh node is ready again:
+
+```bash
+nvram set re_mode=1
+reboot
+```
 
 ## Troubleshooting
 
@@ -59,4 +63,3 @@ reboot
 ```
 
 It may take a while after the reboot for the node to be re-added again to the netwerk.
-
