@@ -1,0 +1,39 @@
+#!/bin/sh
+
+nvram unset wl_acs_bgdfs_ahead
+nvram unset wl_acs_bgdfs_avoid_on_far_sta
+nvram unset wl_acs_bgdfs_enab
+nvram unset wl_acs_bgdfs_fallback_blocking_cac
+nvram unset wl_acs_boot_only
+nvram unset wl_acs_chanim_num_segments
+nvram unset wl_acs_cs_dfs_pref
+nvram unset wl_acs_fcs_mode
+nvram unset wl_acsd_scs_dfs_scan
+nvram unset wl0_acs_bgdfs_ahead
+nvram unset wl0_acs_bgdfs_avoid_on_far_sta
+nvram unset wl0_acs_bgdfs_enab
+nvram unset wl0_acs_bgdfs_fallback_blocking_cac
+nvram unset wl0_acs_boot_only
+nvram unset wl0_acs_chanim_num_segments
+nvram unset wl0_acs_cs_dfs_pref
+nvram unset wl0_acs_fcs_mode
+nvram unset wl0_acsd_scs_dfs_scan
+nvram unset wl1_acs_bgdfs_ahead
+nvram unset wl1_acs_bgdfs_avoid_on_far_sta
+nvram unset wl1_acs_bgdfs_enab
+nvram unset wl1_acs_bgdfs_fallback_blocking_cac
+nvram unset wl1_acs_boot_only
+nvram unset wl1_acs_chanim_num_segments
+nvram unset wl1_acs_cs_dfs_pref
+nvram unset wl1_acs_fcs_mode
+nvram unset wl1_acsd_scs_dfs_scan
+nvram unset wl2_acs_bgdfs_ahead
+nvram unset wl2_acs_bgdfs_avoid_on_far_sta
+nvram unset wl2_acs_bgdfs_enab
+nvram unset wl2_acs_bgdfs_fallback_blocking_cac
+nvram unset wl2_acs_boot_only
+nvram unset wl2_acs_chanim_num_segments
+nvram unset wl2_acs_cs_dfs_pref
+nvram unset wl2_acs_fcs_mode
+nvram unset wl2_acsd_scs_dfs_scan
+nvram commit
