@@ -3,5 +3,4 @@
 if echo "$2" | /bin/grep -q "acsd"; then { /jffs/scripts/wlupdate & }; fi # wlupdate
 if echo "$2" | /bin/grep -q "cfg_server"; then { /jffs/scripts/wlupdate & }; fi # wlupdate
 if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlupdate & }; fi # wlupdate
-if echo "$2" | /bin/grep -q "wlceventd"; then { /jffs/scripts/wlupdate & }; fi # wlupdate
 # if printf "%s" "$@" | /bin/grep -qE "^(((start|stop|restart|kill|reload)_?.*AdGuardHome)$)"; then { sh /jffs/addons/AdGuardHome.d/AdGuardHome.sh "$(printf "%s" "$@" | /bin/grep>
