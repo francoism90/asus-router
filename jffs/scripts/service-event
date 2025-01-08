@@ -3,5 +3,4 @@
 if echo "$2" | /bin/grep -q "acsd"; then { /jffs/scripts/wlupdate service_event "$@" & }; fi # wlupdate
 if echo "$2" | /bin/grep -q "cfg_server"; then { /jffs/scripts/wlupdate service_event "$@" & }; fi # wlupdate
 if echo "$2" | /bin/grep -q "wireless"; then { /jffs/scripts/wlupdate service_event "$@" & }; fi # wlupdate
-if echo "$2" | /bin/grep -q "wlceventd"; then { /jffs/scripts/wlupdate service_event "$@" & }; fi # wlupdate
 # if echo "$2" | /bin/grep -q "scmerlin"; then { /jffs/scripts/scmerlin service_event "$@" & }; fi # scMerlin
