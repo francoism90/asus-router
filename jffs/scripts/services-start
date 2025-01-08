@@ -1,5 +1,5 @@
 #!/bin/sh
 
-/jffs/scripts/wlupdate & # wlupdate
+/jffs/scripts/wlupdate >/dev/null 2>&1 & # wlupdate
 # /jffs/scripts/scmerlin startup & # scMerlin
 # /jffs/addons/scmerlin.d/S95tailtaintdns start >/dev/null 2>&1 & # scMerlin - tailtaintdns
