@@ -13,7 +13,17 @@ wl -i eth6 up
 wl -i eth6 5g_rate auto
 wl -i eth6 txpwr1 -o -m 1496
 
-# On an AiMesh node, and if supported, you can use the following commands to force the 5GHz-2 (radio-2) specs:
+# On an AiMesh node (or tri-band), you can use the following commands to force both radios:
+
+# Force 5GHz-1 spec
+# wl -i eth6 down
+# wl -i eth6 country ALL
+# wl -i eth6 country_abbrev_override "US"
+# wl -i eth6 regulatory 1
+# wl -i eth6 chanspec 36/160
+# wl -i eth6 up
+# wl -i eth6 5g_rate auto
+# wl -i eth6 txpwr1 -o -m 1496
 
 # Force 5GHz-2 spec (if available)
 # wl -i eth6 down
