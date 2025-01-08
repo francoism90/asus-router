@@ -4,15 +4,25 @@
 # This script may be used for testing, in most cases the wlupdate script should work fine.
 # You can find the inferfaces by running "ip addr".
 
+# Force 2.4GHz spec
+# wl -i eth5 down
+# wl -i eth5 country ALL
+# wl -i eth5 country_abbrev_override "US"
+# wl -i eth5 regulatory 1
+# wl -i eth5 chanspec 6/40u
+# wl -i eth5 up
+# wl -i eth5 2g_rate auto
+# wl -i eth5 txpwr1 -o -m 1496
+
 # Force 5GHz specs
-wl -i eth6 down
-wl -i eth6 country ALL
-wl -i eth6 country_abbrev_override "US"
-wl -i eth6 regulatory 1
-wl -i eth6 chanspec 149/160
-wl -i eth6 up
-wl -i eth6 5g_rate auto
-wl -i eth6 txpwr1 -o -m 1496
+# wl -i eth6 down
+# wl -i eth6 country ALL
+# wl -i eth6 country_abbrev_override "US"
+# wl -i eth6 regulatory 1
+# wl -i eth6 chanspec 36/160
+# wl -i eth6 up
+# wl -i eth6 5g_rate auto
+# wl -i eth6 txpwr1 -o -m 1496
 
 # On an AiMesh node (tri-band), you can use the following commands to force both radios:
 
@@ -31,7 +41,7 @@ wl -i eth6 txpwr1 -o -m 1496
 # wl -i eth5 country ALL
 # wl -i eth5 country_abbrev_override "US"
 # wl -i eth5 regulatory 1
-# wl -i eth5 chanspec 36/160u
+# wl -i eth5 chanspec 36/160
 # wl -i eth5 up
 # wl -i eth5 5g_rate auto
 # wl -i eth5 txpwr1 -o -m 1496
