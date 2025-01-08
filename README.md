@@ -6,7 +6,8 @@
 
 ## Introduction
 
-This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers.
+This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. It also offers some tweaks for AiMesh nodes.
+
 Please use the instructions with care, and read the disclaimer before applying any changes.
 
 The purpose is to adjust a router of AP to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
@@ -41,42 +42,41 @@ Login into router using SSH (password or key):
 nvram set jffs2_on=1
 nvram set jffs2_scripts=1
 nvram commit
+reboot
 ```
 
 2. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details.
 
 3. Update your device `nvram` overwrites into the `/jffs/scripts/wlupdate` file.
 
-You may also want to use and adjust `/jffs/scripts/wlboost` to your channel and country. This script isn't called by default, but may be useful to force channels.
-
-5. Make sure scripts are executable:
+4. Make sure scripts are executable:
 
 ```bash
 chmod a+rx /jffs/scripts/*
 ```
 
-6. Apply nvram overwrites:
+5. Apply nvram overwrites:
 
 ```bash
 /jffs/scripts/wlupdate
 ```
 
-If they work, you can make them persistent on reboots:
+If the overrules work, you can make them persistent on reboots:
 
 ```bash
 nvram commit
 reboot
 ```
 
-7. To validate the wireless settings, you may want to use `com.vrem.wifianalyzer`.
-
 ## Testing
 
-To make changes persistent, adjust the `/jffs/scripts/wlboost` and `/jffs/scripts/wlupdate` files.
+To validate the wireless settings, you may want to use the Android app `com.vrem.wifianalyzer`.
 
-Restart the wireless service using `service restart_wireless` or by using the scMerlin addon. These methods are preferred, since the router itself may overrule values.
+To restart the wireless service, use `service restart_wireless` or by using the scMerlin addon.
 
-You may also want to _System Log_ > _Wireless Log_ page of the router:
+The script `/jffs/scripts/wlboost` may be useful to force testing if a channel can be selected.
+
+You may also want to use _System Log_ for diagnostics:
 
 ![image](https://github.com/user-attachments/assets/3775cac7-58e0-4333-b0a9-4dcec775c9fc)
 
@@ -88,4 +88,3 @@ It's possible to restore factory nvram settings by using a hard reset:
 - <https://www.asus.com/support/faq/1039078/>
 
 This will clear all overwrites and restores factory defaults.
-

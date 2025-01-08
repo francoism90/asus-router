@@ -8,17 +8,22 @@
 
 # ACS adjustments (Auto Channel Selection), including DFS/UNII4 channels.
 # This tries to prevent the router from falling back to default channels.
+nvram set acs_2g_ch_no_restrict=1
+nvram set acs_band1=1
+nvram set acs_band3=1
 nvram set acs_ch13=1
 nvram set acs_dfs=1
-nvram set acs_2g_ch_no_restrict=1
 nvram set acs_no_restrict_align=1
 nvram set acs_unii4=1
+nvram set wl_acs_cs_dfs_pref=1
 nvram set wl_acs_dfs=1
 nvram set wl_acs_excl_chans_dfs_2=
 nvram set wl_acs_excl_chans_dfs=
 nvram set wl_acs_excl_chans=
 nvram set wl_acs_start_on_nondfs=0
 nvram set wl_acsd_scs_dfs_scan=0
+nvram set wl_dfs_pref=1
+nvram set wl0_acs_cs_dfs_pref=1
 nvram set wl0_acs_dfs=1
 nvram set wl0_acs_excl_chans_base=
 nvram set wl0_acs_excl_chans_cfg=
@@ -26,25 +31,28 @@ nvram set wl0_acs_excl_chans_valid=
 nvram set wl0_acs_excl_chans=
 nvram set wl0_acs_start_on_nondfs=0
 nvram set wl0_acsd_scs_dfs_scan=0
+nvram set wl0_dfs_pref=1
+nvram set wl1_acs_cs_dfs_pref=1
 nvram set wl1_acs_dfs=1
 nvram set wl1_acs_excl_chans_base=
 nvram set wl1_acs_excl_chans_cfg=
 nvram set wl1_acs_excl_chans_valid=
 nvram set wl1_acs_excl_chans=
 nvram set wl1_acsd_scs_dfs_scan=0
+nvram set wl1_dfs_pref=1
+nvram set wl2_acs_cs_dfs_pref=1
 nvram set wl2_acs_dfs=1
 nvram set wl2_acs_excl_chans_base=
 nvram set wl2_acs_excl_chans_cfg=
 nvram set wl2_acs_excl_chans_valid=
 nvram set wl2_acs_excl_chans=
 nvram set wl2_acsd_scs_dfs_scan=0
+nvram set wl2_dfs_pref=1
 
 # The following tries to force all 5G/6G bands to allow 160MHz (US band).
 # It also tries to remove any band limits.
 # This may be unwanted or not supported by your devices, please validate overwrites.
 
-# nvram set acs_band1=1
-# nvram set acs_band3=1
 # nvram set wl_bw_160=1
 # nvram set wl_bw_cap=0xff
 # nvram set wl0_bw_cap=0xff
@@ -89,9 +97,16 @@ nvram set wl2_reg_mode=h
 # The following examples can be used to overrule channel settings (including AIMesh nodes).
 # Uncomment the lines below to enable the settings.
 
+# This tries to disable auto channel selection.
+# nvram set acs_ifnames=
+# nvram set wl_acs_bgdfs_enab=0
+# nvram set wl0_acs_bgdfs_enab=0
+# nvram set wl1_acs_bgdfs_enab=0
+# nvram set wl2_acs_bgdfs_enab=0
+
 # force 2.4GHz channel (6l = 6 lower, 6u = 6 upper)
 # nvram set wl0_sel_channel=6
-# nvram set wl0_chanspec=6l
+# nvram set wl0_chanspec=6u
 
 # force 5GHz channel
 # AiMesh channel range in most cases: 36-64
@@ -100,8 +115,8 @@ nvram set wl2_reg_mode=h
 
 # force 5GHz-2 channel (if available)
 # AiMesh channel range in most cases: 100-177
-# nvram set wl2_sel_channel=36
-# nvram set wl2_chanspec=36/160
+# nvram set wl2_sel_channel=149
+# nvram set wl2_chanspec=149/160
 
 # force AiMesh channel
 # Useful when the GUI doesn't allow you to choose any lower channels.
