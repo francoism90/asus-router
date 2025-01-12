@@ -13,9 +13,9 @@ ssh 192.168.x.x
 
 ## Using scripts
 
-It is recommended to have the same values defined in `upupdate`, even when the main router doesn't offer that feature as they are in sync (e.g. the `wl2` interface may not exists on the AiMesh router, but it's settings are still being pushed to the node(s)).
+It is recommended to have the same values defined in `wlupdate`, even when the main router doesn't offer that feature as they are in sync (e.g. the `wl2` interface may not exists on the AiMesh router, but it's settings are still being pushed to the node(s)).
 
-You may also want to setup `upupdate` (and `wlboost`) with the same values on the AiMesh node (including service scripts). If your current node doesn't has Merlin support, you may want to setup [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/). This also offers [event](https://github.com/jacklul/asuswrt-scripts?tab=readme-ov-file#user-content-service-eventsh) support, which should help to maintain the interface overrules.
+You may also want to setup `wlupdate` (and `wlboost`) with the same values on the AiMesh node (including service scripts). If your current node doesn't has Merlin support, you may want to setup [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/). This also offers [event](https://github.com/jacklul/asuswrt-scripts?tab=readme-ov-file#user-content-service-eventsh) support, which should help to maintain the interface overrules.
 
 ## Access Web GUI
 
