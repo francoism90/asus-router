@@ -1,11 +1,11 @@
 # AiMesh
 
-> Tip: If your router or AP doesn't support Asuswrt-Merlin, please checkout [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/).
+> Tip: If your router or AP doesn't support Asuswrt-Merlin, checkout [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/).
 
 You need to connect over SSH to your AiMesh node.
-The IP Address is listed on the Network-tab of the AiMesh node.
+The IP Address is listed on the Network-tab of the AiMesh router.
 
-The credentials and SSH-key (recommended) is the same as the main router, as they are synced:
+The credentials and SSH-key (recommended) is the same as the main router (they are synced):
 
 ```bash
 ssh 192.168.x.x
@@ -13,16 +13,14 @@ ssh 192.168.x.x
 
 ## Using scripts
 
-It is recommended to have the same values defined in `wlboost`, even when the main router doesn't offer that feature as they are in sync (e.g. the `wl2` interface may not exists on the AiMesh router, but it's settings are still being pushed to the node(s)).
+It is recommended to have the same values defined in `upupdate`, even when the main router doesn't offer that feature as they are in sync (e.g. the `wl2` interface may not exists on the AiMesh router, but it's settings are still being pushed to the node(s)).
 
-You may also want to setup `wlboost` on the AiMesh node (including service scripts). Comment out the first entries, and adjust the values for the AiMesh node.
+You may also want to setup `upupdate` (and `wlboost`) with the same values on the AiMesh node (including service scripts). If your current node doesn't has Merlin support, you may want to setup [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/). This also offers [event](https://github.com/jacklul/asuswrt-scripts?tab=readme-ov-file#user-content-service-eventsh) support, which should help to maintain the interface overrules.
 
 ## Access Web GUI
 
 > Warning: The following may cause your AiMesh-node from stop working!<br>
 > See Troubleshooting if this happens.
-
-The following are experimental, please use at your own risk.
 
 ### Disable route redirect
 
