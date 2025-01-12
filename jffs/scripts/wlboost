@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Use at your own risk. This script is provided as-is without any warranty.
-# This script may be used for testing, in most cases the wlupdate script should work fine.
+# This script may be used to control channel selection in addition to wlupdate.
 # You can find the inferfaces by running "ip addr".
 
 # Force 2.4GHz spec
@@ -14,7 +14,7 @@
 # wl -i eth5 2g_rate auto
 # wl -i eth5 txpwr1 -o -m 1496
 
-# Force 5GHz specs
+# Force 5GHz spec
 # wl -i eth6 down
 # wl -i eth6 country ALL
 # wl -i eth6 country_abbrev_override "US"
@@ -24,7 +24,7 @@
 # wl -i eth6 5g_rate auto
 # wl -i eth6 txpwr1 -o -m 1496
 
-# On an AiMesh node (tri-band), you can use the following commands to force both radios:
+# On an AiMesh node (tri-band in this example), you can use the following commands to force both radios:
 
 # Force 2.4GHz spec
 # wl -i eth4 down
@@ -46,7 +46,7 @@
 # wl -i eth5 5g_rate auto
 # wl -i eth5 txpwr1 -o -m 1496
 
-# Force 5GHz-2 spec (if available)
+# Force 5GHz-2 spec (if available - tri-band)
 # wl -i eth6 down
 # wl -i eth6 country ALL
 # wl -i eth6 country_abbrev_override "US"
