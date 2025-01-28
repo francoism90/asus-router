@@ -6,7 +6,7 @@
 # Add node (e.g. wl2, wl3, ..) values in case of AiMesh.
 # Values are based on https://github.com/RMerl/asuswrt-merlin.ng
 
-# Add cronjob to run every hour
+# Add cronjob to run everyday at midnight
 cru a wlupdate "0 0 * * * /bin/sh /jffs/scripts/wlupdate"
 
 # ACS adjustments (Auto Channel Selection), including DFS/UNII4 channels.
