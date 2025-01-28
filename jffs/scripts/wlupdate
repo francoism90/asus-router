@@ -7,7 +7,7 @@
 # Values are based on https://github.com/RMerl/asuswrt-merlin.ng
 
 # Add cronjob to run every hour
-cru a wlupdate "0 * * * * /bin/sh /jffs/scripts/wlupdate"
+cru a wlupdate "0 0 * * * /bin/sh /jffs/scripts/wlupdate"
 
 # ACS adjustments (Auto Channel Selection), including DFS/UNII4 channels.
 # This tries to prevent the router from falling back to default channels.
