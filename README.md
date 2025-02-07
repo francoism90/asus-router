@@ -10,7 +10,7 @@ This repo provides information on how one may possibly enable additional or chan
 
 Please use the instructions with care, and read the disclaimer before applying any changes.
 
-The purpose is to adjust a router of AP to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
+The purpose is to adjust a router or AP (AiMesh node) to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
 
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 
@@ -70,7 +70,7 @@ reboot
 
 ## Testing
 
-To validate the wireless settings, you may want to use the Android app `com.vrem.wifianalyzer`.
+To validate the wireless settings, you may want to use [com.vrem.wifianalyzer](https://play.google.com/store/apps/details?id=com.vrem.wifianalyzer) or any other wireless tool.
 
 To restart the wireless service, use `service restart_wireless` or by using the scMerlin addon.
 
