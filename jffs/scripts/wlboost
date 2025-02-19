@@ -6,77 +6,72 @@
 
 # Force 2.4GHz spec
 # wl -i eth5 down
-# wl -i eth5 scansuppress 1
+## wl -i eth5 scansuppress 1
 # wl -i eth5 country ALL
 # wl -i eth5 country_abbrev_override "US"
-# wl -i eth5 bw_cap 2g "0xff"
+## wl -i eth5 bw_cap 2g "0xff"
 # wl -i eth5 regulatory 1
 # wl -i eth5 chanspec 6/40u
-# wl -i eth5 spatial_policy 1
+## wl -i eth5 spatial_policy 1
 # wl -i eth5 up
-# wl -i eth5 phy_forcecal 1
+## wl -i eth5 phy_forcecal 1
 # wl -i eth5 2g_rate auto
 # wl -i eth5 txpwr1 -o -m 1496
-# wl -i eth5 phy_forcecal 1
 
 # Force 5GHz spec
 # wl -i eth6 down
-# wl -i eth6 scansuppress 1
+## wl -i eth6 scansuppress 1
 # wl -i eth6 country ALL
 # wl -i eth6 country_abbrev_override "US"
-# wl -i eth6 bw_cap 5g "0xff"
+## wl -i eth6 bw_cap 5g "0xff"
 # wl -i eth6 regulatory 1
 # wl -i eth6 chanspec 36/160
-# wl -i eth6 spatial_policy 1
+## wl -i eth6 spatial_policy 1
 # wl -i eth6 up
-# wl -i eth6 phy_forcecal 1
+## wl -i eth6 phy_forcecal 1
 # wl -i eth6 5g_rate auto
 # wl -i eth6 txpwr1 -o -m 1496
-# wl -i eth6 phy_forcecal 1
 
 # On an AiMesh node (tri-band in this example, use ip addr to verify), you can use the following commands to force both radios:
 
 # Force 2.4GHz spec
 # wl -i eth4 down
-# wl -i eth4 scansuppress 1
+## wl -i eth4 scansuppress 1
 # wl -i eth4 country ALL
 # wl -i eth4 country_abbrev_override "US"
-# wl -i eth4 bw_cap 2g "0xff"
+## wl -i eth4 bw_cap 2g "0xff"
 # wl -i eth4 regulatory 1
 # wl -i eth4 chanspec 6/40u
-# wl -i eth4 spatial_policy 1
+## wl -i eth4 spatial_policy 1
 # wl -i eth4 up
-# wl -i eth4 phy_forcecal 1
+## wl -i eth4 phy_forcecal 1
 # wl -i eth4 2g_rate auto
 # wl -i eth4 txpwr1 -o -m 1496
-# wl -i eth4 phy_forcecal 1
 
 # Force 5GHz-1 spec
 # wl -i eth5 down
-# wl -i eth5 scansuppress 1
+## wl -i eth5 scansuppress 1
 # wl -i eth5 country ALL
 # wl -i eth5 country_abbrev_override "US"
-# wl -i eth5 bw_cap 5g "0xff"
+## wl -i eth5 bw_cap 5g "0xff"
 # wl -i eth5 regulatory 1
 # wl -i eth5 chanspec 36/160
-# wl -i eth5 spatial_policy 1
+## wl -i eth5 spatial_policy 1
 # wl -i eth5 up
-# wl -i eth5 phy_forcecal 1
+## wl -i eth5 phy_forcecal 1
 # wl -i eth5 5g_rate auto
 # wl -i eth5 txpwr1 -o -m 1496
-# wl -i eth5 phy_forcecal 1
 
 # Force 5GHz-2 spec (if available - tri-band)
 # wl -i eth6 down
-# wl -i eth6 scansuppress 1
+## wl -i eth6 scansuppress 1
 # wl -i eth6 country ALL
 # wl -i eth6 country_abbrev_override "US"
-# wl -i eth6 bw_cap 5g "0xff"
+## wl -i eth6 bw_cap 5g "0xff"
 # wl -i eth6 regulatory 1
-# wl -i eth6 chanspec 149/160
-# wl -i eth6 spatial_policy 1
+# wl -i eth6 chanspec 36/160
+## wl -i eth6 spatial_policy 1
 # wl -i eth6 up
-# wl -i eth6 phy_forcecal 1
+## wl -i eth6 phy_forcecal 1
 # wl -i eth6 5g_rate auto
 # wl -i eth6 txpwr1 -o -m 1496
-# wl -i eth6 phy_forcecal 1
