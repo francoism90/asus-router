@@ -11,19 +11,15 @@ cru a wlupdate "0 0 * * * /bin/sh /jffs/scripts/wlupdate"
 
 # ACS adjustments (Auto Channel Selection), including DFS/UNII4 channels.
 # This tries to prevent the router from falling back to default channels.
-nvram set acs_2g_ch_no_restrict=1
 nvram set acs_band1=1
 nvram set acs_band3=1
 nvram set acs_ch13=1
 nvram set acs_dfs=1
-nvram set acs_no_restrict_align=1
 nvram set acs_unii4=1
-nvram set wl_acs_cs_dfs_pref=1
 nvram set wl_acs_dfs=1
 nvram set wl_acs_excl_chans_dfs_2=
 nvram set wl_acs_excl_chans_dfs=
 nvram set wl_acs_excl_chans=
-nvram set wl_acs_start_on_nondfs=0
 nvram set wl_dfs_pref=1
 nvram set wl0_acs_cs_dfs_pref=1
 nvram set wl0_acs_dfs=1
@@ -31,8 +27,6 @@ nvram set wl0_acs_excl_chans_base=
 nvram set wl0_acs_excl_chans_cfg=
 nvram set wl0_acs_excl_chans_valid=
 nvram set wl0_acs_excl_chans=
-nvram set wl0_acs_start_on_nondfs=0
-nvram set wl0_acsd_scs_dfs_scan=0
 nvram set wl0_dfs_pref=1
 nvram set wl1_acs_cs_dfs_pref=1
 nvram set wl1_acs_dfs=1
@@ -47,7 +41,6 @@ nvram set wl2_acs_excl_chans_base=
 nvram set wl2_acs_excl_chans_cfg=
 nvram set wl2_acs_excl_chans_valid=
 nvram set wl2_acs_excl_chans=
-nvram set wl2_acsd_scs_dfs_scan=0
 nvram set wl2_dfs_pref=1
 
 # The following tries to force all 5G/6G bands to allow 160MHz (US band).
@@ -99,7 +92,6 @@ nvram set wl2_reg_mode=h
 # Uncomment the lines below to enable the settings.
 
 # This tries to disable auto channel selection.
-# nvram set acs_ifnames=
 # nvram set wl_acs_bgdfs_enab=0
 # nvram set wl0_acs_bgdfs_enab=0
 # nvram set wl1_acs_bgdfs_enab=0
@@ -190,4 +182,4 @@ nvram set wl2_reg_mode=h
 # nvram set 2:maxp5gb6a3=120
 
 # Uncomment line when you use the wlboost script to force interface settings.
-# sh /jffs/scripts/wlboost &
+sh /jffs/scripts/wlboost &
