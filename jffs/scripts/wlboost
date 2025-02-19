@@ -69,7 +69,7 @@
 # wl -i eth6 country_abbrev_override "US"
 ## wl -i eth6 bw_cap 5g "0xff"
 # wl -i eth6 regulatory 1
-# wl -i eth6 chanspec 36/160
+# wl -i eth6 chanspec 149/160
 ## wl -i eth6 spatial_policy 1
 # wl -i eth6 up
 ## wl -i eth6 phy_forcecal 1
