@@ -6,9 +6,7 @@
 
 ## Introduction
 
-This repo provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. It also offers some tweaks for AiMesh nodes.
-
-Please use the instructions with care, and read the disclaimer before applying any changes.
+This repository provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. It also offers some tweaks for AiMesh nodes.
 
 The purpose is to adjust a router or AP (AiMesh node) to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
 
@@ -45,23 +43,25 @@ nvram commit
 reboot
 ```
 
-2. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details.
+1. Create/update the required `/jffs/scripts` files, see [given example](https://github.com/francoism90/asus-router/tree/main/jffs/scripts) for details.
 
-3. Update your device `nvram` overwrites into the `/jffs/scripts/wlupdate` file.
+1. Update your device `nvram` overwrites into the `/jffs/scripts/wlupdate` file (uncomment lines starting with `#`).
 
-4. Make sure scripts are executable:
+1. Update `/jffs/scripts/wlboost` if you want to force more channel steering (uncomment lines starting with `#`).
+
+1. Make sure scripts are executable:
 
 ```bash
 chmod a+rx /jffs/scripts/*
 ```
 
-5. Apply nvram overwrites:
+1. Apply nvram overwrites, and register the cronjob:
 
 ```bash
 /jffs/scripts/wlupdate
 ```
 
-If the overrules work, you can make them persistent on reboots:
+1. If the overrules work, you can make them persistent on reboots:
 
 ```bash
 nvram commit
