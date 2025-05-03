@@ -23,8 +23,6 @@ A massive shoutout goes out to the contributes on my previous [gist](https://gis
 
 ## Getting started
 
-> Tip: If your router or AP doesn't support Asuswrt-Merlin, checkout [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/).
-
 > See <https://www.htpcguides.com/enable-ssh-asus-routers-without-ssh-keys/> for instructions. The guide explains both the usage of a password and SSH-keys.
 
 Login into router using SSH (password or key):
@@ -35,6 +33,8 @@ Login into router using SSH (password or key):
 4. Reboot router
 
 ### User-scripts
+
+> Tip: If your router or AP doesn't support Asuswrt-Merlin, checkout [asuswrt-scripts](https://github.com/jacklul/asuswrt-scripts/).
 
 1. Follow <https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts>.
 
