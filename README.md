@@ -10,6 +10,8 @@ This repository provides information on how one may possibly enable additional o
 
 The purpose is to adjust a router or AP (AiMesh node) to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
 
+Please note adjustments may cause connectivity issues and may have a performance impact. It's advisable to test each value (overwrite), check your routers temps and validate if it actually works for you.
+
 The adjusted nvram settings have been tested on the ASUS RT-AX58U v1 (Asuswrt-Merlin) & ASUS ZenWiFi AX XT8 v2 (AiMesh node - stock firmware).
 
 > Note: Please do not ask for any support on the SNBForums, ASUS or any (official) Merlin related projects about these tweaks. See the Troubleshooting section to reset any changes, or remove any adjustments first if you need to ask for support/help.
