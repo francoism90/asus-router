@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This repository provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS Merlin provided routers. It also offers some tweaks for AiMesh nodes.
+This repository provides information on how one may possibly enable additional or change WiFi-channels, and TX-power on ASUS provided routers. It also offers some tweaks for AiMesh nodes.
 
 The purpose is to adjust a router or AP (AiMesh node) to the legal state of the country (e.g. you bought an ASUS router in JAP, and want to re-use again it in GER). The current method is focussing on exposed nvram variables, and overrule them again when a service or event has been restarted or dispatched.
 
