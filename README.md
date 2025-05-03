@@ -34,7 +34,7 @@ Login into router using SSH (password or key):
 
 ### User-scripts
 
-> See <https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts> for details.
+1. Follow <https://github.com/RMerl/asuswrt-merlin.ng/wiki/User-scripts>.
 
 1. Make sure JFFS has been enabled:
 
@@ -76,7 +76,7 @@ To validate the wireless settings, you may want to use [com.vrem.wifianalyzer](h
 
 To restart the wireless service, use `service restart_wireless` or by using the scMerlin addon.
 
-The script `/jffs/scripts/wlboost` may be useful to force testing if a channel can be selected.
+The script `/jffs/scripts/wlboost` may be useful to force channel steering. While the ASUS firmware uses nvram settings, it may choose to ignore them. This script forces wireless interfaces to follow certain parameters, but may cause your wireless to go down for a few seconds.
 
 You may also want to use _System Log_ for diagnostics:
 
